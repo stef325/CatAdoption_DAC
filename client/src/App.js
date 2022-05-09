@@ -6,7 +6,7 @@ import PersonRegister from './components/PersonRegister'
 function App() {
   return (
     <div className="App">
-      
+       
       <PersonRegister/>
     </div>
   );

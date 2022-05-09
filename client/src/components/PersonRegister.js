@@ -24,7 +24,7 @@ export default class PersonRegister extends React.Component{
         
         fetch("http://10.0.0.101:8080/api/person", rqstOpt).then(
             console.log(data), alert()
-            ).catch(erro=>console.log(erro), alert())
+            ).catch(erro=>console.log(erro))
         
     }
     render() {
