@@ -27,7 +27,7 @@ export default class CatRegister extends React.Component{
         
         
         fetch("http://10.0.0.101:8080/api/cat", rqstOpt).then(
-            console.log(data) 
+            console.log(data)
             ).catch(erro=>console.log(erro))
         
     }
