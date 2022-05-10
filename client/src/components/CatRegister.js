@@ -25,12 +25,14 @@ export default class CatRegister extends React.Component{
             body: data
         }
         
+        
         fetch("http://10.0.0.101:8080/api/cat", rqstOpt).then(
-            console.log(data), alert()
-            ).catch(erro=>console.log(erro), alert())
+            console.log(data) 
+            ).catch(erro=>console.log(erro))
         
     }
     handleChange(event) {
+        
         
         this.setState({pelagem:event.target.value});
 
