@@ -2,20 +2,20 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #531c6f;
+    background-image:url('./img/cat-gif-loop-pong.gif');
+    background-size: cover;
 }
 .RegisterConteiner{
-    background-color: rgb(203, 88, 244);
+    background-color: rgba(202, 88, 244, 0.151);
     width: 50vh;
     height: fit-content;
     display: flex;
     border-radius: 10px;
-    margin: 30vh;
+    margin-top: 40vh;
     align-items: center;
     justify-content: center;
     padding: 10px;
     flex-direction: column;
-    
     box-shadow: 0 0 0.4em #000000;
     
 }
@@ -42,7 +42,7 @@ input{
 select{
     height: 30px;
     border-style: none;
-    width: 200px;
+    width: 204px;
     border-radius: 5px;
     box-shadow: 0 0 0.2em #000000;
     text-align: center;
