@@ -1,13 +1,16 @@
 
 import './App.css';
-import CatRegister from './components/CatRegister';
-import PersonRegister from './components/PersonRegister'
+import AppRoutes from './main/AppRoutes';
+import NavBar from './components/NavBar'
+import "bootswatch/dist/vapor/bootstrap.css"
 
 function App() {
   return (
     <div className="App">
-       
-      <CatRegister/>
+      <NavBar/>
+
+      <main><AppRoutes/></main>
+      
     </div>
   );
 }

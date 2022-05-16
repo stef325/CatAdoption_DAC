@@ -2,57 +2,26 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image:url('./img/cat-gif-loop-pong.gif');
-    background-size: cover;
+    
+    height: 100vh;
 }
-.RegisterConteiner{
-    background-color: rgba(202, 88, 244, 0.151);
-    width: 50vh;
+
+#conteiner{
+    
+    width: max-content;
     height: fit-content;
     display: flex;
-    border-radius: 10px;
-    margin-top: 40vh;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    flex-direction: column;
-    box-shadow: 0 0 0.4em #000000;
+    padding: 5%;
     
 }
 
-h1{
-    font-size:1.5rem;
-    color: rgb(255, 255, 255);
+.bar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
-form{
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    padding: 10px;
-}
-input{
-    height: 30px;
-    border-style: none;
-    width: 200px;
-    border-radius: 5px;
-    box-shadow: 0 0 0.2em #000000;
-    text-align: center;
-    color: rgb(49, 49, 49);
-}
-select{
-    height: 30px;
-    border-style: none;
-    width: 204px;
-    border-radius: 5px;
-    box-shadow: 0 0 0.2em #000000;
-    text-align: center;
-    color: rgb(49, 49, 49);
-}
-button{
-    background-color: #63256c;
-    border-style: none;
-    padding: 5px;
-    border-radius: 5px;
-    color: rgb(225, 225, 225);
-    box-shadow: 0 0 0.2em #000000;
-}
+
