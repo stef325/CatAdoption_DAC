@@ -6,7 +6,7 @@ export default class FormGroup extends React.Component{
         return (
             
             <div className="form-group">
-                <label class="form-label mt-4" htmlFor={this.props.htmlFor}>{this.props.label}</label>
+                <label className="form-label mt-4" htmlFor={this.props.htmlFor}>{this.props.label}</label>
                 {this.props.children}
             </div>
         );

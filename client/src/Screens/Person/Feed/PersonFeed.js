@@ -7,16 +7,24 @@ import Card from '../../../components/Card';
 export default class PersonFeed extends React.Component {
 
     state = {
-        name: '',
-        age: 0
+        param:'',
     }
 
+    search = () => {
+        const data = {
+            param: this.state.param
+        }
+
+        console.log(data)
+        alert(data)
+    }
     person = {
         first:{
             name:"João",
             age: 19
         }
     }
+
     render() {
         return (
 
@@ -25,8 +33,8 @@ export default class PersonFeed extends React.Component {
                     <label className="form-label mt-4" htmlFor="search">Pesquisar</label>
                     <form className="d-flex">
                     
-                        <input id="search" className="form-control me-sm-2" type="text" placeholder="Pesquisar"/>
-                            <button className="btn btn-secondary my-2 my-sm-0" type="submit">Pesquisar</button>
+                        <input id="search" className="form-control me-sm-2" type="text" placeholder="Pesquisar" onChange={(e)=>{this.setState({param: e.target.value})}}/>
+                            <button className="btn btn-secondary my-2 my-sm-0" type="submit" onClick={this.search}>Pesquisar</button>
                     </form>
                     <br/>
                     <div className="progress">

@@ -33,7 +33,7 @@ import FormGroup from '../../../components/FormGroup';
             console.log(data), alert("INFORMAÇÕES ALTERADAS COM SUCESSO!")
             ).catch(erro=>console.log(erro));
         
-        this.props.history.push("/");
+        this.props.history.push("/home");
         
     }
     render() {

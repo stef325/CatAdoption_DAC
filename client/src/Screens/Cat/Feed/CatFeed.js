@@ -7,12 +7,25 @@ import Card from '../../../components/Card';
 export default class CatFeed extends React.Component {
 
     state = {
-        id: 0,
-        name: '',
-        age: 0,
-        pelagem: 'DEFAULT'
+        param:'',
+        filter:''
     }
 
+    search = () => {
+        const data = {
+            param: this.state.param,
+            filter: this.state.filter
+        }
+
+        console.log(data)
+        alert(data)
+    }
+    handleChange(event) {
+
+
+        this.setState({ filter: event.target.value });
+
+    }
     cat = {
         first:{
             name:"lulu",
@@ -30,21 +43,24 @@ export default class CatFeed extends React.Component {
             pelagem: "Frajola"
         }
     }
+
+   
+
     render() {
         return (
 
             <div>
                 <Card title="Pesquisar">
                     <label className="form-label mt-4" htmlFor="search">Pesquisar por:{
-                    <select className="form-select">
+                    <select className="form-select" onChange={(event) => this.handleChange(event)}>
                         <option value="DEFAULT">Filtro</option>
                         <option value="Pelagem">Pelagem</option>
                         <option value="Idade">Idade</option>
                     </select>}</label>
                     <form className="d-flex">
                     
-                        <input id="search" className="form-control me-sm-2" type="text" placeholder="Pesquisar"/>
-                            <button className="btn btn-secondary my-2 my-sm-0" type="submit">Pesquisar</button>
+                        <input id="search" className="form-control me-sm-2" type="text" placeholder="Pesquisar" onChange={(e)=>{this.setState({param: e.target.value})}}/>
+                            <button className="btn btn-secondary my-2 my-sm-0" type="submit" onClick={this.search}>Pesquisar</button>
                     </form>
                     <br/>
                     <div className="progress">

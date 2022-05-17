@@ -1,0 +1,11 @@
+.principal-title{
+    text-align: center;
+}
+.card {
+    max-width: 20rem;
+}
+.gridaa{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    column-gap: 2vw;
+}

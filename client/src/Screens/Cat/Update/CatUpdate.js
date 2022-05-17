@@ -39,7 +39,7 @@ import FormGroup from '../../../components/FormGroup';
             console.log(data), alert("INFORMAÇÕES ALTERADAS COM SUCESSO!")
         ).catch(erro => console.log(erro))
 
-        this.props.history.push("/");
+        this.props.history.push("/home");
 
     }
     handleChange(event) {
@@ -68,7 +68,7 @@ import FormGroup from '../../../components/FormGroup';
                         
                         
                         
-                        <label class="form-label mt-4" htmlFor="formP">Tipo de pelagem</label>
+                        <label className="form-label mt-4" htmlFor="formP">Tipo de pelagem</label>
                         <select id='formP' className='form-select' onChange={(event) => this.handleChange(event)}>
                             <option value="DEFAULT">Pelagem</option>
                             <option value="Frajola">Frajola</option>

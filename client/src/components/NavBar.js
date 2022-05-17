@@ -9,16 +9,16 @@ export default class NavBar extends React.Component {
 
 
             <div className="bar" >
-                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="/">CatAdoption</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <div className="container-fluid">
+                        <a className="navbar-brand" href="/">CatAdoption</a>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
                         </button>
 
-                        <div class="collapse navbar-collapse" id="navbarColor01">
-                            <ul class="navbar-nav me-auto">
-                                <NavBarItem href="/" label="Home"/>
+                        <div className="collapse navbar-collapse" id="navbarColor01">
+                            <ul className="navbar-nav me-auto">
+                                <NavBarItem href="/home" label="Home"/>
                                 <NavBarItem href="/personupdate" label="Atualizar pessoa"/>
                                 <NavBarItem href="/personfeed" label="Pesquisar pessoa" />
                                 <NavBarItem href="/catupdate" label="Atualizar gato"/>
