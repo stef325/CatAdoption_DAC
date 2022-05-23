@@ -7,3 +7,9 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 2vw;
 }
+
+.principal-catFeed{
+    width: 85vw;
+    height: fit-content;
+    
+}

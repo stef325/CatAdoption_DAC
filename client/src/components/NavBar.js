@@ -19,10 +19,17 @@ export default class NavBar extends React.Component {
                         <div className="collapse navbar-collapse" id="navbarColor01">
                             <ul className="navbar-nav me-auto">
                                 <NavBarItem href="/home" label="Home"/>
+
+                                <NavBarItem href="/catregister" label="Registrar gato" />
+                                <NavBarItem href="/catfeed" label="Pesquisar gato" />
+                                <NavBarItem href="/catupdate" label="Atualizar gato"/>
+                                <NavBarItem href="/catdelete" label="Deletar gato" />
+
+                                <NavBarItem href="/personregister" label="Registrar pessoa" />
                                 <NavBarItem href="/personupdate" label="Atualizar pessoa"/>
                                 <NavBarItem href="/personfeed" label="Pesquisar pessoa" />
-                                <NavBarItem href="/catupdate" label="Atualizar gato"/>
-                                <NavBarItem href="/catfeed" label="Pesquisar gato" />
+                                <NavBarItem href="/persondelete" label="Deletar pessoa" />
+                                
                             </ul>
                         </div>
                     </div>

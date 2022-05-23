@@ -78,6 +78,7 @@ public class CatController {
     //update
     @PutMapping("{id}")
     public ResponseEntity update(@PathVariable("id") Integer id, @RequestBody CatDTO dto){
+        System.out.println(id);
         try {
             dto.setId(id);
             Cat entity = converter.DTOToCat(dto);

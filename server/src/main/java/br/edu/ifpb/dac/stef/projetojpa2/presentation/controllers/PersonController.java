@@ -32,16 +32,15 @@ public class PersonController {
     private PersonService personService;
     
     //create
-    @CrossOrigin
-    @PostMapping(consumes = {"application/x-www-form-urlencoded"} , 
-    produces = { MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity save(PersonDTO dto){
+   
+    @PostMapping
+    public ResponseEntity save(@RequestBody PersonDTO dto){
         try {
             
             System.out.println(dto.getName());
-            //personServicePerson entity = converter.DTOToPerson(dto);
-            //personService.save(entity);
-            //dto = converter.PersonToDTO(entity);
+            Person entity = converter.DTOToPerson(dto);
+            personService.save(entity);
+            dto = converter.PersonToDTO(entity);
 
             return new ResponseEntity(dto,HttpStatus.CREATED);
         } catch (Exception e) {

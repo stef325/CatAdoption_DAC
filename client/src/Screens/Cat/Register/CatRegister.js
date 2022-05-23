@@ -1,5 +1,9 @@
 import React from 'react';
+import axios from 'axios';
 
+import Card from '../../../components/Card';
+
+import FormGroup from '../../../components/FormGroup';
 export default class CatRegister extends React.Component{
 
     state = {
@@ -13,23 +17,25 @@ export default class CatRegister extends React.Component{
             alert("Nescessário selecionar pelagem");
             return;
         }
-        const data = {
+        
+        this.create()
+        
+    }
+    create = async () =>{
+        await axios.post("http://localhost:8080/api/cat", 
+        { 
             name: this.state.name,
             age: Number.parseInt(this.state.age),
             pelagem: this.state.pelagem
         }
-        const rqstOpt = {
-            method:'POST',
-            headers:{'Content-Type' : 'application/x-www-form-urlencoded;application/json' 
-        },
-            body: data
+        ).then(response=>{
+            console.log(response)
+        }).catch(error=>{
+            console.log(error.response)
         }
-        
-        
-        fetch("http://10.0.0.101:8080/api/cat", rqstOpt).then(
-            console.log(data)
-            ).catch(erro=>console.log(erro))
-        
+            
+        )
+
     }
     handleChange(event) {
         
@@ -41,19 +47,30 @@ export default class CatRegister extends React.Component{
         return (
             
             <div className="RegisterConteiner">
-                <h1>Adicionar Gato</h1>
-                <form>
-                    <input type="text" placeholder='nome' id='name' onChange={(e)=>{this.setState({name: e.target.value})}}/>
-                    <input type="text" placeholder='Idade' id='age'onChange={(e)=>{this.setState({age: e.target.value})}}/>
+                <Card title="Cadastrar: Gato">
+                    <form className="principal-form">
 
-                    <select onChange={(event)=>this.handleChange(event)}>
-                        <option value="DEFAULT">Pelagem</option>
-                        <option value="Frajola">Frajola</option>
-                        <option value="Escaminha">Escaminha</option>
-                        <option value="Tigrado">Tigrado</option>
-                    </select>
-                    <button onClick={this.save}>Cadastrar Gato</button>
-                </form>
+                        <FormGroup label="Nome" htmlFor="name">
+                            <input className='form-control' type="text" placeholder='nome' id='name' onChange={(e) => { this.setState({ name: e.target.value }) }} />
+                        </FormGroup>
+
+                        <FormGroup label="Idade" htmlFor="Idade">
+                        <input className='form-control' type="text" placeholder='Idade' id='age' onChange={(e) => { this.setState({ age: e.target.value }) }} />
+                        </FormGroup>
+                        
+                        
+                        
+                        <label className="form-label mt-4" htmlFor="formP">Tipo de pelagem</label>
+                        <select id='formP' className='form-select' onChange={(event) => this.handleChange(event)}>
+                            <option value="DEFAULT">Pelagem</option>
+                            <option value="Frajola">Frajola</option>
+                            <option value="Escaminha">Escaminha</option>
+                            <option value="Tigrado">Tigrado</option>
+                        </select>
+                        <br/>
+                        <button className="btn btn-secondary" onClick={this.save}>Cadastrar Gato</button>
+                    </form>
+                </Card>
             </div>
         );
     }

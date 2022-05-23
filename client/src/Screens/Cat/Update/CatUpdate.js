@@ -1,12 +1,12 @@
 import React from 'react';
-
+import axios from 'axios';
 
 import "../../css/Forms.css"
-import {withRouter} from 'react-router-dom';
 
 import Card from '../../../components/Card';
 import FormGroup from '../../../components/FormGroup';
- class CatUpdate extends React.Component {
+
+export default  class CatUpdate extends React.Component {
 
     state = {
         id: 0,
@@ -20,28 +20,29 @@ import FormGroup from '../../../components/FormGroup';
             alert("Nescessário selecionar pelagem");
             return;
         }
-        const data = {
-            id: Number.parseInt(this.state.id),
+        
+        this.update()
+
+    }
+    update = async () =>{
+        await axios.put(`http://localhost:8080/api/cat/${this.state.id}`, 
+        { 
             name: this.state.name,
             age: Number.parseInt(this.state.age),
             pelagem: this.state.pelagem
         }
-        const rqstOpt = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded;application/json'
-            },
-            body: data
+        ).then(response=>{
+            console.log(response)
+            alert(response)
+        }).catch(error=>{
+            console.log(error.response)
+            alert(error.response)
         }
-
-
-        fetch("http://10.0.0.101:8080/api/cat/{id}", rqstOpt).then(
-            console.log(data), alert("INFORMAÇÕES ALTERADAS COM SUCESSO!")
-        ).catch(erro => console.log(erro))
-
-        this.props.history.push("/home");
+            
+        )
 
     }
+
     handleChange(event) {
 
 
@@ -55,7 +56,7 @@ import FormGroup from '../../../components/FormGroup';
                 <Card title="Alterar informações: Gato">
                     <form className="principal-form">
                         <FormGroup label="Id do Gato" htmlFor="id">
-                            <input className='form-control' type="text" placeholder='id' id='id' onChange={(e) => { this.setState({ name: e.target.value }) }} />
+                            <input className='form-control' type="text" placeholder='id' id='id' onChange={(e) => { this.setState({ id: e.target.value }) }} />
                         </FormGroup>
 
                         <FormGroup label="Nome" htmlFor="name">
@@ -85,4 +86,3 @@ import FormGroup from '../../../components/FormGroup';
 
 }
 
-export default CatUpdate;

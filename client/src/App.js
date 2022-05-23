@@ -9,7 +9,8 @@ function App() {
     <div className="App">
       <NavBar/>
 
-      <main><AppRoutes/></main>
+      
+      <AppRoutes/>
 
       
     </div>
