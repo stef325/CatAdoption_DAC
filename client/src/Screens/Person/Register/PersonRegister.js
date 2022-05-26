@@ -44,7 +44,7 @@ export default class PersonRegister extends React.Component{
                         </FormGroup>
                         
                         <br/>
-                        <button className="btn btn-secondary" onClick={this.update}>Cadastrar Pessoa</button>
+                        <button className="btn btn-secondary" onClick={this.save}>Cadastrar Pessoa</button>
                     </form>
                 </Card>
             </div>

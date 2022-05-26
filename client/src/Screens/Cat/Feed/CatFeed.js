@@ -64,7 +64,6 @@ export default class CatFeed extends React.Component {
             }
             params = `${params}pelagem=${this.state.pelagem}`
         }
-
         await axios.get(`http://localhost:8080/api/cat${params}`)
         .then(response=>{
             const cats = response.data;
@@ -81,7 +80,7 @@ export default class CatFeed extends React.Component {
     handleChange(event) {
 
 
-        this.setState({ filter: event.target.value });
+        this.setState({ pelagem: event.target.value });
 
     }
     
